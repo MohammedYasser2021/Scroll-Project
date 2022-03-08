@@ -1,0 +1,235 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+
+.container{
+    width: 85%;
+    margin: auto
+}
+
+#home{
+    background-image: url(../images/landing.jpg);
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.nav-center{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    transition: all 0.5s ease-in-out;
+}
+.nav-header h1{
+    font-weight: normal;
+    letter-spacing: 2px;
+    color: #222;
+    font-size: 25px;
+}
+@media (max-width: 767px){
+    .nav-toggle{
+        display: block;
+        padding: 10px 15px;
+        background-color: crimson;
+        border:none;
+        outline: none;
+        cursor: pointer;
+    }
+    .nav-toggle i {
+        transition: transform 0.3s ease-in-out;
+        font-size: 20px;
+        color: #fff;
+    }
+    .nav-toggle:hover i{
+        transform: rotate(90deg);
+    }
+    
+    .nav-center{
+        position: relative;
+    }
+
+    .links{
+        height: 0;
+        overflow: hidden;
+        position: absolute;
+        top: 100%;
+        width: 100%;
+        left: 0;
+        transition: height 0.5s ease-in-out;
+        z-index: 99999;
+    }
+    .links li a{
+        display: block;
+        background-color: #cccccc;
+        padding: 15px 0 15px 8%;
+        color:#222;
+        letter-spacing: 1px;
+        transition: all 0.3s ease-in-out;
+    }
+    .links li a:hover{
+        background-color: #0DAF8E;
+        padding-left: 60px;
+        color:#fff
+    }
+    .links li:not(:last-child) a{
+        border-bottom: 1px solid #777;
+    }
+    .links.show-links{
+        height: 14rem
+    }
+
+}
+@media (min-width: 768px){
+    .nav-toggle{
+        display: none
+    }
+
+    .links{
+        display: flex;
+        justify-content: flex-end;
+        margin-left: 15px;
+        z-index: 99999;
+    }
+    .links li a{
+        padding: 10px 15px;
+        display: block;
+        background-color: #4A708C;
+        margin-right: 10px;
+        color: #fff;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    .links li a:hover{
+        background-color: #2482B4;
+    }
+}
+
+.content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+.content h1{
+    color: #485EF2
+}
+.content p{
+    margin: 15px 0;
+    line-height: 1.5;
+    font-size: 14px;
+    color: #222
+}
+.content .content-btn{
+    padding: 10px 30px;
+    border: 1px solid #036560;
+    background-color: transparent;
+    outline:none;
+    cursor: pointer;
+    color: #222;
+    transition: all 0.3s ease-in-out;
+    display: inline-block;
+}
+.content .content-btn:hover{
+    background-color: #036560;
+    color: #fff
+}
+
+section{
+    height: 500px;
+    border-bottom: 2px solid #777;
+}
+.sec-head{
+    width: 300px;
+    margin: 50px auto 0 ;
+    text-align: center;
+}
+
+.sec-head h2{
+    margin-bottom: 7px;
+    font-size: 30px;
+}
+
+.sec-head .line{
+    width: 80px;
+    height: 4px;
+    background-color: #458BF6;
+    display: block;
+    margin: auto;
+    transition: width 0.4s ease-in-out;
+}
+.sec-head:hover .line{
+    width: 120px;
+} 
+
+footer{
+    background-color: #222;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    padding: 20px
+}
+
+footer p{
+    text-transform: capitalize;
+}
+
+.scroll-to-top{
+    width: 35px;
+    height: 30px;
+    display: block;
+    background-color: #2482B4;
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+    border-radius: 5px;
+    position: fixed;
+    bottom: 20px;
+    right: 25px;
+    line-height: 30px;
+    cursor: pointer;
+    animation: scaleAnimate 2.5s ease-in-out infinite;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+@keyframes scaleAnimate {
+    0%{
+        transform: scale(1.2)
+    }
+    50%{
+        transform: scale(0.7)
+    }
+    100%{
+        transform: scale(1.2)
+    }
+}
+
+.fixed-nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #8FCAD4;
+    padding: 20px 7.5%;
+    z-index: 9999;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+.scroll-link.active{
+    background-color: royalblue;
+}
